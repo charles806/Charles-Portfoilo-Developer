@@ -9,8 +9,8 @@ const fontSans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Charles Portfoilo | Developer",
-  description: "Portfoilo website for full stack developer",
+  title: "Charles Portfolio | Developer",
+  description: "Portfolio website for full stack developer",
 };
 
 export default function RootLayout({
@@ -20,11 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fontSans.className} antialiased bg-[#0d0d1f] `}>
-        {children}
+      <body className={`${fontSans.className} antialiased bg-[#0d0d1f]`}>
         <ResponsiveNav />
-        </body>
-
+        {children}
+      </body>
     </html>
   );
 }
