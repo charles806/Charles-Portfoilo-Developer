@@ -35,7 +35,7 @@ const Skills = () => {
     { name: "Python", icon: <FaPython />, percentage: 60 },
   ];
 
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
   const [isAutoScroll, setIsAutoScroll] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
