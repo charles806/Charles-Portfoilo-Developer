@@ -1,8 +1,14 @@
+"use client";
+
 import React from "react";
-import Home from "@/component/Home/Home";
+import Home from "../component/Home/Home";
 
 const HomePage = () => {
-  return <Home />;
+  return (
+    <>
+      <Home />
+    </>
+  );
 };
 
 export default HomePage;
