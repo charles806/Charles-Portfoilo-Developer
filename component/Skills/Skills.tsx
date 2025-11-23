@@ -63,18 +63,18 @@ const Skills = () => {
     return () => clearInterval(interval);
   }, [isAutoScroll, isDragging, scrollCount]);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
-    setStartX(e.pageX - sliderRef.current.offsetLeft);
-    setScrollLeft(sliderRef.current.scrollLeft);
+    setStartX(e.pageX - sliderRef.current!.offsetLeft);
+    setScrollLeft(sliderRef.current!.scrollLeft);
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging) return;
     e.preventDefault();
-    const x = e.pageX - sliderRef.current.offsetLeft;
+    const x = e.pageX - sliderRef.current!.offsetLeft;
     const walk = (x - startX) * 2;
-    sliderRef.current.scrollLeft = scrollLeft - walk;
+    sliderRef.current!.scrollLeft = scrollLeft - walk;
   };
 
   const handleMouseUp = () => {
@@ -104,11 +104,7 @@ const Skills = () => {
           }}
         >
           {[...skills, ...skills].map((skill, index) => (
-            <Tilt
-              key={`${skill.name}-${index}`}
-              scale={1.05}
-              transitionSpeed={400}
-            >
+            <Tilt key={`${skill.name}-${index}`} scale={1.05} transitionSpeed={400}>
               <div className="flex-shrink-0 bg-gradient-to-br from-purple-900/40 to-cyan-900/40 text-center w-40 rounded-3xl flex flex-col items-center justify-center p-6 shadow-lg border border-purple-500/20 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-cyan-400/20 hover:shadow-lg">
                 <div className="text-5xl mb-4 text-cyan-300">{skill.icon}</div>
                 <p className="text-2xl font-semibold text-white">
