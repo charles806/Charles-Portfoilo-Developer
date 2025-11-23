@@ -40,11 +40,10 @@ const Skills = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [scrollCount, setScrollCount] = useState(0);
 
   // Auto-scroll effect
   useEffect(() => {
-    if (!isAutoScroll || isDragging || scrollCount >= 100) return;
+    if (!isAutoScroll || isDragging) return;
 
     const interval = setInterval(() => {
       if (sliderRef.current) {
@@ -55,13 +54,12 @@ const Skills = () => {
           sliderRef.current.scrollWidth - sliderRef.current.clientWidth
         ) {
           sliderRef.current.scrollLeft = 0;
-          setScrollCount((prev) => prev + 1);
         }
       }
     }, 30);
 
     return () => clearInterval(interval);
-  }, [isAutoScroll, isDragging, scrollCount]);
+  }, [isAutoScroll, isDragging]);
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
@@ -87,9 +85,6 @@ const Skills = () => {
         <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4">
           My <span className="text-cyan-200">Skills</span>
         </h1>
-        <p className="text-center text-gray-400 text-sm mb-8">
-          Drag to scroll or watch it auto-scroll
-        </p>
 
         <div
           ref={sliderRef}
