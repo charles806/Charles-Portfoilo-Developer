@@ -11,7 +11,7 @@ import Contact from "./Contact/Contact";
 
 const Home = () => {
   return (
-    <main className="overflow-x-hidden bg-[#0d0d1f]">
+    <main className="overflow-hidden bg-[#0d0d1f]">
       <ResponsiveNav />
       <Hero />
       <Services />
