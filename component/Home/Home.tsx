@@ -8,17 +8,34 @@ import Project from "../Project/Project";
 import Skills from "../Skills/Skills";
 import Contact from "./Contact/Contact";
 
-
 const Home = () => {
   return (
     <main className="overflow-hidden bg-[#0d0d1f]">
       <ResponsiveNav />
-      <Hero />
-      <Services />
-      <Resume />
-      <Project />
-      <Skills />
-      <Contact />
+
+      <section id="home">
+        <Hero />
+      </section>
+
+      <section id="services">
+        <Services />
+      </section>
+
+      <section id="resume">
+        <Resume />
+      </section>
+
+      <section id="project">
+        <Project />
+      </section>
+
+      <section id="skills">
+        <Skills />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
     </main>
   );
 };

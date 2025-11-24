@@ -5,12 +5,9 @@ import React, { useEffect, useState } from "react";
 import { FaCode } from "react-icons/fa";
 import { HiBars3BottomRight } from "react-icons/hi2";
 
-
 type Props = {
-  openNav : ()=>void; 
-} 
-
-
+  openNav: () => void;
+};
 
 const Nav = ({ openNav }: Props) => {
   const [navBg, setNavBg] = useState(false);
@@ -28,7 +25,7 @@ const Nav = ({ openNav }: Props) => {
     <div
       className={`transition-all ${
         navBg ? "bg-[#0f142ed9] shadow-md" : "bg-transparent"
-      } duration-200 h-[12vh] z-[10000] fixed w-full`}
+      } duration-200 h-[12vh] z-10000 fixed w-full`}
     >
       <div className="flex items-center h-full justify-between w-[90%] mx-auto">
         {/*Logo*/}
@@ -44,19 +41,25 @@ const Nav = ({ openNav }: Props) => {
         <div className="hidden lg:flex items-center space-x-10">
           {navLinks.map((link) => {
             return (
-              <Link
+              <p
                 key={link.id}
-                href={link.url}
-                className="text-base hover:text-cyan-300 text-white font-medium transition-all duration-200"
+                onClick={() => {
+                  const el = document.querySelector(link.url);
+                  el?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="cursor-pointer text-base hover:text-cyan-300 text-white font-medium transition-all duration-200"
               >
-                <p>{link.Label}</p>
-              </Link>
+                {link.Label}
+              </p>
             );
           })}
         </div>
         {/*Toggle Menu*/}
         <div className="flex items-center space-x-4">
-          <HiBars3BottomRight onClick={openNav} className="w-8 h-8 cursor-pointer text-white lg:hidden" />
+          <HiBars3BottomRight
+            onClick={openNav}
+            className="w-8 h-8 cursor-pointer text-white lg:hidden"
+          />
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import dev from "@/image/dev.webp";
 
 const Services = () => {
   return (
-    <section className="relative z-20 bg-[#0d0d1f] text-white pt-24 pb-24">
+    <section className="relative z-20 bg-[#0d0d1f] text-white pt-24 pb-24" id="services">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h1 className="text-2xl md:text-4xl xl:text-5xl font-bold mb-8">
           Collaborate with brands <br /> and agencies to create <br /> impactful

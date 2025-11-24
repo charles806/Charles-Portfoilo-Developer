@@ -5,7 +5,7 @@ import { FaComputer } from "react-icons/fa6";
 
 const Resume = () => {
   return (
-    <section className="relative z-20 bg-[#0d0d1f] text-white pt-20 pb-16">
+    <section className="relative z-20 bg-[#0d0d1f] text-white pt-20 pb-16" id="works">
       <div className="w-[90%] sm:w-[70%] mx-auto grid grid-cols-1 xl:grid-cols-2 gap-10">
         {/* Work Part */}
         <div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "@/component/Home/NavBar/ResponsiveNav";
+import Footer from "@/component/Home/Footer/Footer"
 
 const fontSans = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`${fontSans.className} antialiased bg-[#0d0d1f]`}>
         <ResponsiveNav />
         {children}
+        <Footer />
       </body>
     </html>
   );

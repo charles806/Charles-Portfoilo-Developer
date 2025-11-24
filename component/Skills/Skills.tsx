@@ -36,7 +36,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="relative z-20 bg-[#0d0d1f] text-white py-24">
+    <section className="relative z-20 bg-[#0d0d1f] text-white py-24" id="skills">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
