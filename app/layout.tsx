@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "@/component/Home/NavBar/ResponsiveNav";
-import Footer from "@/component/Home/Footer/Footer"
+import Footer from "@/component/Home/Footer/Footer";
 
 const fontSans = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -20,10 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${fontSans.className} antialiased bg-[#0d0d1f]`}>
+    <html lang="en" className="h-full">
+      <body
+        className={`${fontSans.className} antialiased bg-[#0d0d1f] min-h-full flex flex-col`}
+      >
         <ResponsiveNav />
-        {children}
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
