@@ -10,7 +10,9 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -29,10 +31,8 @@ const Contact = () => {
       return;
     }
 
-    // Your WhatsApp number (in international format without + or spaces)
     const whatsappNumber = "2347032355643";
 
-    // Create the WhatsApp message with proper encoding
     const message = `*New Contact Form Submission*%0A%0A*Name:* ${encodeURIComponent(
       formData.name
     )}%0A*Email:* ${encodeURIComponent(
@@ -41,13 +41,10 @@ const Contact = () => {
       formData.phone
     )}%0A%0A*Message:*%0A${encodeURIComponent(formData.message)}`;
 
-    // Create WhatsApp URL
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
 
-    // Open WhatsApp in new tab
     window.open(whatsappURL, "_blank");
 
-    // Clear form after submission
     setFormData({
       name: "",
       email: "",
